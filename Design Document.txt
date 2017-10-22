@@ -1,0 +1,15 @@
+The Drone Collision Avoidance System.
+
+1) The airport is (row,col):(1,1) of the grid. Every Drone is given a task toa different random location from (1,1), the drone goes to that location and again comes back to (1,1).
+
+2) After the drone reaches a target, a message appears "Drone id # reached target (row,col):(# , #)"
+
+3) After reaching a target the drone starts going back to its point of launch in the path that it came. After it reaches the point of launch a message appears "Drone id: # has reached the point of launch"
+
+4) While travelling drones might face collision with other drones. This has been resolved by using the system that we see in roads. The one who comes first to an intersection(grid) has the right of way. Similarly if any drone sees that there is another drone to the block it is moving to, it releases semaphore and goes up or sideways depending on its current position to let the other drone pass by. After the other drone has passed by, it again goes back to its path to travel to its destination or point of launch.
+
+5) Each drone has a seperate class or structure that saves each one of its information, i.e. id,target location, launch location and a semaphore which helps in developing the concurrent system of waiting and releasing.
+
+6) The droneprocess function acts as the driver class. It guides the drone throughout the map, helps to reach the target, avoid collisions with other drones and reach back to the point of launch safely.
+
+  
